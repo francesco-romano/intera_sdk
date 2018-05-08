@@ -19,7 +19,12 @@ import sys
 import argparse
 
 import rospy
-import xacro
+import rospkg
+try:
+    import xacro_jade as xacro
+except ImportError:
+    import xacro
+
 
 from intera_core_msgs.msg import (
     URDFConfiguration,
